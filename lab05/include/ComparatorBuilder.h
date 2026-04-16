@@ -2,6 +2,7 @@
 
 #include "Comparators.h"
 #include <vector>
+#include <deque>
 #include <string>
 
 class ComparatorBuilder {
@@ -9,13 +10,11 @@ private:
     CaseInsensitiveLess m_caseInsensitive;
     CaseSensitiveLess m_caseSensitive;
     LengthLess m_lengthLess;
-    std::vector<IgnorePrefixComparator> m_prefixWrappers;
+    std::deque<IgnorePrefixComparator> m_prefixWrappers;
     std::vector<const StringComparator*> m_activeComparators;
 
 public:
-    ComparatorBuilder() {
-        m_prefixWrappers.reserve(16);
-    }
+    ComparatorBuilder() {}
 
     ComparatorBuilder& caseInsensitive() {
         m_activeComparators.push_back(&m_caseInsensitive);
@@ -32,7 +31,7 @@ public:
         return *this;
     }
 
-    ComparatorBuilder& ignorePrefix(const std::string& prefix) {
+    ComparatorBuilder&  ignorePrefix(const std::string& prefix) {
         if(!m_activeComparators.empty()) {
             const StringComparator* last = m_activeComparators.back();
             m_prefixWrappers.emplace_back(*last, prefix);
