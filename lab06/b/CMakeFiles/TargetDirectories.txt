@@ -1,0 +1,3 @@
+/home/filip/Documents/Cpp/CPP2_AGH_Course/lab06/b/CMakeFiles/tensor.dir
+/home/filip/Documents/Cpp/CPP2_AGH_Course/lab06/b/CMakeFiles/edit_cache.dir
+/home/filip/Documents/Cpp/CPP2_AGH_Course/lab06/b/CMakeFiles/rebuild_cache.dir

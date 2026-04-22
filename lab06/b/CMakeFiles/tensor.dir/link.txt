@@ -1,0 +1,1 @@
+/usr/bin/c++ CMakeFiles/tensor.dir/src/Main.cxx.o CMakeFiles/tensor.dir/src/Tensor.cpp.o -o tensor 
